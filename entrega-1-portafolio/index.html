@@ -6,11 +6,18 @@
     <meta name="author" content="David Esteban Rodriguez" />
     <meta name="keywords" content="portafolio" />
     <meta name="description" content="primera version de mi portafolio profesional utilizando html y css" />
-    <!--  etiqueta para relacionar el archivo de estilos css -->
-    <link rel="stylesheet" href="./styles/index.css" />
+    <!--  link de estilos a bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous" />
     <!--  etiqueta para relacionar la imagen del logo de la pagina -->
     <link rel="shortcut icon" href="assets/logo.ico" type="image/x-icon" />
+    <!-- link a los iconos de bootrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!--  etiqueta para relacionar el archivo de estilos css -->
+    <link rel="stylesheet" href="./styles/index.css" />
     <title>Portafolio</title>
   </head>
   <body>
@@ -26,7 +33,9 @@
           <li>
             <a href="#About" target="_blank" rel="noopener noreferrer">Acerca de mi</a>
           </li>
-          <li><a href="#Experience" target="_blank" rel="noopener noreferrer">Trabajos</a></li>
+          <li>
+            <a href="#Experience" target="_blank" rel="noopener noreferrer">Trabajos</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -37,7 +46,25 @@
         <div>
           <h3 class="subtitle">HOLA, SOY DAVID RODRIGUEZ</h3>
           <h2 class="bigTitule">DESARROLLADOR DE SOFTWARE</h2>
-          <span class="link-CV"><a href="./assets/currículumvitae.pdf" target="_blank">visita mi hoja de vida</a></span>
+          <button type="button" class="boton" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver CV</button>
+
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="ratio ratio-16x9">
+                    <iframe src="./assets/currículumvitae.pdf" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <img class="photoDavid" src="./assets/photoDavid.jpg" alt="PhotoDavid" />
@@ -45,29 +72,54 @@
       <!--  seccion acerca de mi -->
       <section id="about" class="seccion-about">
         <h2 class="bigTitule">ACERCA DE MI</h2>
-        <hr />
+        <hr class="bigTitule" />
         <p>
-          Desarrollador de Software, con más de 10 años de experiencia en el desarrollo de aplicaciones web y móviles, con manejo en diversos
-          lenguajes y tecnologías como: Java, .NET, Android, HTML, GWT, JavaScrip, CSS, NodeJS y Angular. Con amplio conocimiento y practica en
-          despliegues e integraciones en Azure Devops, manejo en bases de datos (MySQL, SQL Server, MongoDB), gestión de repositorios (GIT) y
-          mantenimiento de plataformas de servicios. He trabajado en áreas de telecomunicaciones, financieras y de salud. Además de mis habilidades
-          técnicas, soy una persona responsable, proactiva, con gran capacidad de trabajar en equipo, adaptable a todas las situaciones y apasionado
-          por el aprendizaje constante.
+          Desarrollador de software dedicado con 9 años de experiencia en desarrollo y mantenimiento de aplicaciones web, con habilidad en sistemas de integración continua y desarrollo en base de
+          datos. Experto con varios lenguajes de programación haciendo análisis de corrección de errores y pruebas funcionales.
         </p>
       </section>
       <!-- seccion trabajos -->
-      <section id="Experience" class="seccion-experience">
+      <section id="Experience" class="container my-5 p-2">
         <h2 class="bigTitule">TRABAJOS</h2>
-        <hr />
-        <div class="div-welii">
-          <img src="./assets/welii.png" alt="welii" class="photoWelii" />
-          <span><strong>Welii Colombia s.a.s</strong></span>
-          <span><i>C# Html JavaScript SqlServer</i></span>
-        </div>
-        <div class="div-bankvision">
-          <img src="./assets/Bankvision.png" alt="Bankvision" class="photoBankvision" />
-          <span><strong>Welii Colombia s.a.s</strong></span>
-          <span><i>C# Html JavaScript SqlServer</i></span>
+        <hr class="bigTitule" />
+        <div class="row misExperiencias">
+          <div class="col-12 col-md-6 col-lg-6 gap-5">
+            <div class="card border border-dark" style="width: 18rem">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title text-center mb-2">Welii Colombia S.A.S</h5>
+                <img src="./assets/welii.png" class="card-img-top mb-2 mx-1" alt="welii" />
+                <p>SISTEMA DE INFORMACION PARA ENTIDADES HOSPITALARIAS, HECHO EN MVC ASP.NET (c#, HTML CSS, JAVASCRIPT, SQL SERVER)</p>
+                <a href="https://weliiclientes.gomedisys.com/" class="mt-1">Ver enlace</a>
+              </div>
+            </div>
+            <div class="card border border-dark mt-1" style="width: 18rem">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title text-center mb-2">Bankvision S.A.S</h5>
+                <img src="./assets/Bankvision.png" class="card-img-top mb-2 mx-1" alt="bankvision" />
+                <p>SISTEMA DE INFORMACION PARA ENTIDADES FINANCIERAS, HECHO EN GWT(Google web toolkit), java html,css,javascript, mysql</p>
+              </div>
+            </div>
+          </div>
+          <div class="row misExperiencias">
+            <div class="col-12 col-md-6 col-lg-6 gap-5 mt-5">
+              <div class="card border border-dark" style="width: 18rem">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title text-center mb-2">Pide Cerca</h5>
+                  <img src="./assets/pideCerca.png" class="card-img-top mb-2 mx-1" alt="pideCerca" />
+                  <p>PROYECTO DE APRENDIZAJE SOBRE TIENDA VIRTUAL LLAMADO PIDE CERCA, HEHCO CON HTML, CSS, JAVASCRIPT Y BOOSTRAP</p>
+                  <a href="https://derpito8909.github.io/ProyectoPideCerca.io/" class="boton mt-1">Ver enlace</a>
+                </div>
+              </div>
+              <div class="card border border-dark" style="width: 18rem">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title text-center mb-2">Eco-turismo</h5>
+                  <img src="./assets/turismo.png" class="card-img-top mb-2 mx-1" alt="turismo" />
+                  <p>PROYECTO DE APRENDIZAJE SOBRE RESERVAS DE VIAJES TURISMO, LLAMADO ECO-TURISMO, HECHO CON HTML, CSS, JAVASCRIPT Y BOOSTRAP</p>
+                  <a href="#" class="boton mt-1">Ver enlace</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -88,5 +140,10 @@
         </div>
       </article>
     </footer>
+    <!-- link a la logica  de javascript de bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
   </body>
 </html>

@@ -13,6 +13,7 @@
 * {
   margin: 0;
   padding: 0px;
+  box-sizing: border-box;
 }
 body {
   width: 100%;
@@ -20,7 +21,6 @@ body {
   font-family: var(--tipografia);
   color: var(--colorTexto);
   overflow-x: hidden;
-  box-sizing: border-box;
 }
 /*  ------ HEADER ----- */
 header {
@@ -61,59 +61,61 @@ main {
   height: auto;
   margin-top: 30px;
 }
-h2 {
-  font-size: xx-large;
+.bigTitule {
+  font-weight: bolder;
+  font-size: 2.6em;
+  color: var(--colorTexto);
+}
+.subtitle {
+  font-weight: normal;
+  font-size: 1.2em;
+  color: var(--colorTexto);
+}
+.boton {
+  background-color: var(--colorClaro);
+  border-radius: 5px;
+  color: var(--colorTexto);
+  width: 100px;
 }
 /* seccion personal */
 .seccion-Personal {
   display: flex;
-  justify-content: space-between;
-  margin: 10px 10px 0 27px;
+  justify-content: space-around;
+  /* margin: 10px 50px 0 50px; */
 }
 .photoDavid {
   width: 200px;
   height: 200px;
 }
 /* seccion acerca de mi */
-.seccion-about {
-  display: grid;
-  grid-template-columns: 23% 58%;
-  grid-template-rows: auto;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px 10px 0 27px;
+.seccion-about p {
+  width: 100%;
+  padding: 0 50px;
+  text-align: center;
 }
-p {
-  grid-column: 2 / 2;
-  text-align: justify;
+.seccion-about hr {
+  width: 85%;
+  margin: 5px auto;
+}
+.seccion-about .bigTitule {
+  text-align: center;
+}
+.bigTitule hr {
+  width: 10px;
 }
 /* seccion trabajos */
-.seccion-experience {
-  display: grid;
-  grid-template-columns: 23% 58%;
-  grid-template-rows: auto;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px 10px 0 27px;
+#Experience .bigTitule {
+  text-align: center;
 }
-.seccion-experience img {
-  width: 339px;
+.misExperiencias img {
+  width: 200px;
   height: 200px;
 }
-.div-welii {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  margin-left: 50px;
-}
-.div-bankvision {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+.card-body a {
+  background-color: var(--colorClaro);
+  border-radius: 5px;
+  color: var(--colorTexto);
+  width: 110px;
 }
 
 /* footer */

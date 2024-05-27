@@ -27,8 +27,12 @@ body {
 .menuNav {
   background-color: var(--colorFondo);
 }
-.navbar-nav:hover {
-  color: var(--colorClaro);
+.nav-link {
+  transform: scale(0.9);
+  transition: transform 1s;
+}
+.nav-link:hover {
+  transform: scale(1.1);
 }
 /* Main */
 

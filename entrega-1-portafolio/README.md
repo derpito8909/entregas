@@ -1,6 +1,6 @@
 # Portafolio
 
-### portafolio profesional utilizando html, css y bootstrap
+### portafolio profesional utilizando html, css y bootstrap, visualizalo en esta url https://portafoliodavidrodriguez.netlify.app/
 
 ---
 

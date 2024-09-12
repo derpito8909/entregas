@@ -109,58 +109,137 @@ main {
   height: 90px;
 }
 .seccion-skills {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
-.skills {
-  display: grid;
-  grid-auto-rows: 1fr 1fr;
-  grid-template-columns: repeat(5, 1fr);
+.item {
+  column-gap: 18px;
+  margin-top: 11px;
 }
-.item-skills {
-  background-color: var(--colorFondo);
-  margin: 5px 5px;
-  text-align: center;
-  border-radius: 5px;
-  border: 2px solid var(--colorFondo);
-}
-.item-skills:hover {
+.item:hover {
   background-color: var(--colorClaro);
 }
 
+.skill + .skill {
+  margin-top: 50px;
+}
+
+.skill h4 {
+  font-size: 24px;
+  text-transform: uppercase;
+  margin: 0 0 15px;
+}
+
+.progress {
+  height: 15px;
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: #dfdfdf;
+  box-shadow: none;
+}
+
+.progress-bar {
+  background-color: #212121;
+}
 /* seccion trabajos */
 #Experience .bigTitule {
   text-align: center;
 }
-.misExperiencias {
-  width: 100%;
-  height: 225px;
+/* Section: Portfolio */
+
+.img-res {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }
-/*  tarjetas de los proyectos */
-.card-body {
-  background-color: var(--colorContraste);
-  color: black;
-  font-size: 1.2em;
+.section-portfolio {
+  padding-bottom: 120px;
 }
 
-.card:hover {
-  /*  nombre que se conecta con el keyframe */
-  animation-name: scale;
-  /*  tiempo de la duracion */
-  animation-duration: 9s;
-  /*  cuantas veces se va repetir la animacion */
-  animation-iteration-count: infinite;
-  /*  forma en que queremos  que se de el movimiento */
-  animation-timing-function: linear;
-  animation-direction: alternate;
+.portfolio-item {
+  height: 280px;
+  margin-bottom: 30px;
+  position: relative;
 }
-.card-body .btn:hover {
-  background-color: var(--colorClaro);
+
+.section-portfolio .col-md-4:nth-last-child(-n + 3) .portfolio-item {
+  margin-bottom: 0;
 }
-.card-body a {
-  background-color: var(--colorFondo);
-  border-radius: 5px;
-  color: var(--colorTexto);
-  width: 110px;
+
+.portfolio-item:before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: background-color 0.25s ease-in-out;
+  -moz-transition: background-color 0.25s ease-in-out;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  -o-transition: background-color 0.25s ease-in-out;
+  -ms-transition: background-color 0.25s ease-in-out;
+}
+
+.portfolio-item:hover:before {
+  background-color: rgba(33, 33, 33, 0.6);
+}
+
+.portfolio-item-info {
+  position: absolute;
+  top: 150px;
+  left: 0px;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out, left 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out, left 0.25s ease-in-out;
+  -webkit-transition: opacity 0.25s ease-in-out, left 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out, left 0.25s ease-in-out;
+  -ms-transition: opacity 0.25s ease-in-out, left 0.25s ease-in-out;
+}
+
+.portfolio-item:hover .portfolio-item-info {
+  left: 50px;
+  opacity: 1;
+}
+
+.portfolio-item-info h4 {
+  margin: 0 0 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.portfolio-item-info a {
+  padding: 6px 7px 4px;
+  font-size: 12px;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  color: #fff;
+  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  -moz-transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  -webkit-transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  -o-transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  -ms-transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+}
+
+.portfolio-item-info a:hover {
+  color: #212121;
+  background-color: #fff;
+}
+
+.section-portfolio .btn {
+  margin-top: 10px;
+}
+
+/* Modal */
+.modal-content {
+  border-radius: 0;
+  box-shadow: 0px 0px 40px 8px rgba(0, 0, 0, 0.2);
+  color: var(--colorFondo);
 }
 
 /* footer */
